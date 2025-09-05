@@ -7,7 +7,7 @@ url = 'https://web.archive.org/web/20230902185655/https://en.everybodywiki.com/1
 db_name = 'Movies.db'
 table_name = 'Top_50'
 csv_path = 'top_50_films.csv'
-df = pd.DataFrame(columns=["Average Rank","Film","Year"])
+df = pd.DataFrame(columns=["Average Rank","Film","Year", "Rotten Tomatoes' Top 100"])
 count = 0
 
 html_page = requests.get(url).text
@@ -17,7 +17,7 @@ tables = data.find_all('tbody')
 rows = tables[0].find_all('tr')
 
 for row in rows:
-    if count<100:
+    if count<25:
         col = row.find_all('td')
         if len(col)!=0:
             data_dict = {"Average Rank": col[0].contents[0],
