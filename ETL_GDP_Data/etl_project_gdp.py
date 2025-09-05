@@ -121,3 +121,5 @@ query_statement = f"SELECT * FROM {table_name} WHERE GDP_USD_billions > 100 ORDE
 run_query(query_statement, sql_connection)
 
 sql_connection.close()
+
+# completed
