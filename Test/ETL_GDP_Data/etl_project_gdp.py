@@ -123,5 +123,3 @@ run_query(query_statement1, sql_connection)
 run_query(query_statement2 , sql_connection)
 
 sql_connection.close()
-
-# completed
