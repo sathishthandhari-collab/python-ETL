@@ -117,8 +117,10 @@ log_progress("Load phase Ended")
 log_progress("ETL Job Ended")
 
 # Running some basic queries on the database table
-query_statement = f"SELECT * FROM {table_name} WHERE GDP_USD_billions > 100 ORDER BY GDP_USD_billions DESC LIMIT 10"
-run_query(query_statement, sql_connection)
+query_statement1= f"SELECT * FROM {table_name} WHERE GDP_USD_billions > 100 ORDER BY GDP_USD_billions DESC LIMIT 10"
+query_statement2= f"SELECT AVG(GDP_USD_billions) FROM {table_name} WHERE GDP_USD_billions > 100"
+run_query(query_statement1, sql_connection)
+run_query(query_statement2 , sql_connection)
 
 sql_connection.close()
 
